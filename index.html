@@ -6,29 +6,35 @@
 <head>
     <meta charset="utf-8">
     <title>Noiseless</title>
-    <meta name="description" content="A noise-free memo app.">
+    <meta name="description" content="A non-bloated HTML5 writer.">
     <meta name="author" content="Panu Leppäniemi">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
+    <link href="http://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet" type="text/css">
     <link type="text/css"  rel="stylesheet" href="stylesheets/base.css">
     <link type="text/css"  rel="stylesheet" href="stylesheets/skeleton.css">
-    <link type="text/css"  rel="stylesheet" href="stylesheets/layout.css">
     <link type="text/less" rel="stylesheet" href="stylesheets/noiseless.less">
 
     <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
 <body>
     <div class="container">
         <div class="sixteen columns add-bottom">
-            1
+            <div class="wrapper">
+                <div id="content" class="add-bottom" contenteditable="true">
+                    <div>Focus on writing. Go ahead. Make a story.</div>
+                </div>
+                
+                <div id="format" class="button right">format</div>
+            </div>
         </div>
     </div>
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="javascripts/coffee-script.js"></script>
-    <script type="text/javascript" src="javascripts/less-1.3.0.min.js"></script>
-    <script type="text/javascript" src="coffeescripts/noiseless.coffee"></script>
+    <script type="text/javascript"   src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript"   src="javascripts/coffee-script.js"></script>
+    <script type="text/javascript"   src="javascripts/less-1.3.0.min.js"></script>
+    <script type="text/coffeescript" src="coffeescripts/noiseless.coffee"></script>
 </body>
 </html>
