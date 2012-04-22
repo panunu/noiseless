@@ -1,5 +1,16 @@
-$('#format').live 'click', (e) ->
-  content = $('#content').html().trim()
-  content = content.replace('<div>#', '<div><h1>').replace('#</div>', '</h1></div>') # TODO: Make it better.
+class Noiseless
+  formats = '###': 'h3', '##': 'h2', '#': 'h1'
+
+  bind: =>
+    $('#format').live 'click', (e) => @format()
   
-  $('#content').html content
+  format: (content) =>
+    content = $('#content').html().trim()
+    
+    for markdown, html of formats
+      content = content.replace('<div>' + markdown, '<div><' + html + '>') # TODO: Make it better.
+    
+    $('#content').html content
+
+app = new Noiseless
+app.bind()
