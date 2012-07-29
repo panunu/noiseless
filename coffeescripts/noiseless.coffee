@@ -1,16 +1,29 @@
 class Noiseless
   formats = '###': 'h3', '##': 'h2', '#': 'h1'
+  
+  constructor: ->
+    if localStorage.getItem 'noiseless-written'
+      $('#content').html localStorage.getItem 'noiseless-written'
 
   bind: =>
-    $('#format').live 'click', (e) => @format()
-  
-  format: (content) =>
-    content = $('#content').html().trim()
+    $('#content div').live 'dblclick', (e) => @format e.currentTarget
+    $('#persist').live 'click', (e) => @persist()
     
+  persist: ->
+    localStorage.setItem 'noiseless-written', $('#content').html()
+ 
+  format: (target) =>
+    content = $(target).html().trim()
+    
+    if content.indexOf('#') is -1 then return
+        
+    # TODO: Make it better.
     for markdown, html of formats
-      content = content.replace('<div>' + markdown, '<div><' + html + '>') # TODO: Make it better.
+      content = content.replace(markdown, '<' + html + '>')
     
-    $('#content').html content
-
+    $(target).html content
+    
+  focus: (target) => $(target).addClass 'focus'
+    
 app = new Noiseless
 app.bind()

@@ -1,6 +1,7 @@
 body
 {
-    background-color: #f3f3f3;
+    //background-color: #f3f3f3;
+    background-color: #f5f5f5;
 
     font-family: "Quattrocento";
     font-size:   16px;
@@ -11,13 +12,27 @@ h1, h2, h3, h4, h5, h6 { font-family: "Quattrocento"; }
 .left  { float: left;  }
 .right { float: right; }
 
-.container { margin-top: 10%; margin-bottom: 20%; }
+.container { margin-top: 10%; }
 
-.wrapper { width: 75%; margin: auto; padding-bottom: 20px; }
+.wrapper { width: 800px; margin: auto; margin-top: 100px; }
 
-#content { width: 100%; text-align: justify; }
-.button  { opacity: 0.25; -webkit-transition: opacity 1s linear; &:hover { opacity: 0.8; } }
+.button  { opacity: 0.1; -webkit-transition: opacity 1s ease-in-out; &:hover { opacity: 0.8; } }
 
+#content
+{
+    padding: 80px 100px;
+
+    text-align: justify;
+    
+    outline-style:      none;
+    -moz-outline-style: none;
+
+    background-image: url('/images/background.jpg');
+
+    border-radius: 6px;
+
+    //div { opacity: 0.25; -webkit-transition: opacity 1s ease-in-out; &.focus { opacity: 1.0; } }
+}
 
 @media only screen and (max-width: 959px)                        {                           }
 @media only screen and (min-width: 768px) and (max-width: 959px) {                           }
